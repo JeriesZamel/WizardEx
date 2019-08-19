@@ -9,74 +9,76 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <header> 
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="#">Navbar</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                      
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                          <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown
-                              </a>
-                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                              </div>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                            </li>
-                          </ul>
-                          <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                          </form>
-                        </div>
-                      </nav>
-        </header>
-        <main>
-          <div class="detailsLabel">
-            <label for="fullName">Name: <span type="text" id="fullName"></label>
+  <div class="container">
+      <header> 
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                      <a class="navbar-brand" href="#">Navbar</a>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                    
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                          <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Dropdown
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="#">Action</a>
+                              <a class="dropdown-item" href="#">Another action</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                          </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                      </div>
+                    </nav>
+      </header>
+      <main>
+        <div class="detailsLabel">
 
-            <label for="image"><img src="#" id="image"></label>
+          <label for="spnName">Name: <span type="text" id="spnName"></label>
 
-            <label for="email">E-mail: <span id="email"></label>
+          <label for="spnImage"><img src="#" id="spnImage"></label>
 
-            <label for="date">BirthDate: <span id="date"></label>
+          <label for="spnEmail">E-mail: <span id="spnEmail"></label>
 
-            <label for="uNumber">Phone: <span id="uNumber"></label>
+          <label for="spnDate">BirthDate: <span id="spnDate"></label>
 
-            <label for="city">City: <span id="city"></label>
+          <label for="spnNumber">Phone: <span id="spnNumber"></label>
 
-            <label for="street">Street Address: <span id="street"></label>
+          <label for="spnCity">City: <span id="spnCity"></label>
+
+          <label for="spnStreet">Street Address: <span id="spnStreet"></label>
+          
+          <label for="spnHobbies">Hobbies: <span id="spnHobbies"></label>
+
+        </div>          
+      </main>
+
+      <footer>
+          <div class="row">
             
-            <label for="hobbies">Hobbies: <span id="hobbies"></label>
+              <div class="col-md-12 text-center">
+                  My Wizard
+              </div>
 
-          </div>          
-        </main>
-
-        <footer>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    My Wizard
-                </div>
-
-            </div>
-        </footer>
-    </div>
+          </div>
+      </footer>
+  </div>
    
 
   <script>
@@ -89,8 +91,25 @@
       spnStreet = document.querySelector("#street"),
       spnEmail = document.querySelector("#email");
 
+      /*document.getElementById("spnName").innerHTML = localStorage.getItem("fullName");*/
 
-      spnName.innerHTML = localStorage.getItem("#fullName");
+      if (typeof(Storage) !== "undefined") {
+        // Store
+        //localStorage.setItem("fullName", "Smith");
+        // Retrieve
+        document.getElementById("spnName").innerHTML = localStorage.getItem("fullName");
+        document.getElementById("spnImage").innerHTML = localStorage.getItem("imageFile");
+        document.getElementById("spnCity").innerHTML = localStorage.getItem("City");
+        document.getElementById("spnDate").innerHTML = localStorage.getItem("Date");
+        document.getElementById("spnNumber").innerHTML = localStorage.getItem("uNumber");
+        document.getElementById("spnStreet").innerHTML = localStorage.getItem("uStreet");
+        document.getElementById("spnEmail").innerHTML = localStorage.getItem("Email");
+        document.getElementById("spnHobbies").innerHTML = localStorage.getItem("hobbies");
+      } 
+      else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+      }
+      
 
 
   </script>
